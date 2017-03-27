@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.*;
 
+
 public class ReaderFile
 {
 	public ReaderFile()
@@ -32,16 +33,28 @@ public class ReaderFile
             
 			String[] strArr = lines.toArray(new String[lines.size()]);
 			
+			ArrayList<String> temp = new ArrayList<String>();
 			
-            // Always close files.
+			for(int i = 1 ; i < strArr.length ; i++)
+			{
+					temp.add(strArr[i]);
+			}
+			
+			
+			//Properly Array for calculation
+			String[] goodArr = temp.toArray(new String[temp.size()]);
+			
+			// Always close files.
             bufferedReader.close();
-            
-            // Getting index in Array list
-            System.out.println(lines.get(0));
-            
+                                   
             // Number of rows
-            int nRows = strArr.length;
-            System.out.println("Number of rows" + nRows);        
+            int nRows = goodArr.length;
+            System.out.println("Number of rows" + nRows);
+            
+            // Number of cols
+            //int nCols = (goodArr[0].length()-goodArr[0].replace(" ", "").length())+1; 
+            //System.out.println("Number of cols" + goodArr[0].length()); 
+            //System.out.println(goodArr[0]);      
         }
         catch(FileNotFoundException ex) {
             System.out.println(
