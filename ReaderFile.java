@@ -20,15 +20,28 @@ public class ReaderFile
             FileReader fileReader = new FileReader(fileName);
 
             // Always wrap FileReader in BufferedReader.
-            BufferedReader bufferedReader = 
-                new BufferedReader(fileReader);
-
-            while((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+                
+			ArrayList<String> lines = new ArrayList<String>();
+            while((line = bufferedReader.readLine()) != null) {				   
+				   System.out.println(line);
+				   
+				   // Adding lines to ArrayList
+				   lines.add(line);
             }   
-
+            
+			String[] strArr = lines.toArray(new String[lines.size()]);
+			
+			
             // Always close files.
-            bufferedReader.close();         
+            bufferedReader.close();
+            
+            // Getting index in Array list
+            System.out.println(lines.get(0));
+            
+            // Number of rows
+            int nRows = strArr.length;
+            System.out.println("Number of rows" + nRows);        
         }
         catch(FileNotFoundException ex) {
             System.out.println(
@@ -44,4 +57,3 @@ public class ReaderFile
     }
 
 }
-
