@@ -44,17 +44,26 @@ public class ReaderFile
 			//Properly Array for calculation
 			String[] goodArr = temp.toArray(new String[temp.size()]);
 			
-			// Always close files.
+			// Closing files.
             bufferedReader.close();
                                    
             // Number of rows
             int nRows = goodArr.length;
-            System.out.println("Number of rows" + nRows);
+            System.out.println("Number of rows " + nRows);
             
             // Number of cols
-            //int nCols = (goodArr[0].length()-goodArr[0].replace(" ", "").length())+1; 
-            //System.out.println("Number of cols" + goodArr[0].length()); 
-            //System.out.println(goodArr[0]);      
+            int space = 0;
+            
+            for(int i = 0; i < goodArr[0].length(); i++){
+
+				if(goodArr[0].charAt(i) == ' '){
+					space++;
+				}
+			}
+			
+			int nCols = (goodArr[0].replace(" ","").length() - space);
+            System.out.println("Number of rows " + nCols);
+                       
         }
         catch(FileNotFoundException ex) {
             System.out.println(
