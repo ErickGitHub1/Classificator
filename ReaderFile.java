@@ -44,10 +44,15 @@ public class ReaderFile
 			// Table of information about number of classes, features and objects
 			String[] informations = strArr[0].split(" ");
 			
-			System.out.println(informations[0]);
-			
 			// Casting type Strint to int - number of classes
-			int number_classes = Integer.parseInt(informations[0]);		
+			int number_classes = Integer.parseInt(informations[0]);
+			
+			// Casting type String to int - number of features
+			int number_of_features = Integer.parseInt(informations[1]);
+			
+			// Casting type String to int - number of objects
+			int number_of_objects = Integer.parseInt(informations[2]);	
+			System.out.println("Number of objects " + number_of_objects);	
 		
 			//Properly Array for calculation
 			String[] goodArr = temp.toArray(new String[temp.size()]);
@@ -57,9 +62,8 @@ public class ReaderFile
                                    
             // Number of rows
             int nRows = goodArr.length;
-            System.out.println("Number of rows " + nRows);
-            
-            // Number of cols
+                        
+            // Calculations need for number of cols
             int space = 0;
             
             for(int i = 0; i < goodArr[0].length(); i++){
@@ -69,9 +73,9 @@ public class ReaderFile
 				}
 			}
 			
+			// Number of cols
 			int nCols = (goodArr[0].replace(" ","").length() - space);
-            System.out.println("Number of rows " + nCols);
-                       
+                                   
         }
         catch(FileNotFoundException ex) {
             System.out.println(
