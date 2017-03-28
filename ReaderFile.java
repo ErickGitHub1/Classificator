@@ -46,7 +46,9 @@ public class ReaderFile
 			
 			System.out.println(informations[0]);
 			
-			
+			// Casting type Strint to int - number of classes
+			int number_classes = Integer.parseInt(informations[0]);		
+		
 			//Properly Array for calculation
 			String[] goodArr = temp.toArray(new String[temp.size()]);
 			
