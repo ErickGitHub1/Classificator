@@ -40,6 +40,12 @@ public class ReaderFile
 					temp.add(strArr[i]);
 			}
 			
+			System.out.println(strArr[0]);
+			// Table of information about number of classes, features and objects
+			String[] informations = strArr[0].split(" ");
+			
+			System.out.println(informations[0]);
+			
 			
 			//Properly Array for calculation
 			String[] goodArr = temp.toArray(new String[temp.size()]);
